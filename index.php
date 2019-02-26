@@ -8,5 +8,6 @@
 	header('Location: '.$uri.'/dashboard/');
 	exit;
 	cccccccccskjksjdnksjdkskslds
+	jjbsjksbdksjbdks
 ?>
 Something is wrong with the XAMPP installation :-(
