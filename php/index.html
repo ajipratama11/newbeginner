@@ -1,0 +1,193 @@
+<?php
+
+	ob_start();
+	session_start();
+	if(isset($_SESSION['admin_id'])) header("location: login.php");
+	include "config.php";
+
+
+?>
+
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MT.SEMERU</title>
+		  <link rel="icon" href="images/tnbts.png">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="landing is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">MAHAMERU</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="regulo.html">Ranu Regulo</a></li>
+											<li><a href="pani.html">RanuPani</a></li>
+											<li><a href="kumbolo.html">Ranu Kumbolo</a></li>
+											<li><a href="index.php">Input Data</a></li>
+											
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2>MAHAMERU</h2>
+							<p>3676 MDPL<br />
+							TOP OF JAVA<br />
+						
+							<ul class="actions special">
+								<li><a href="https://bookingsemeru.bromotenggersemeru.org/" target="_blank" class="button primary">KLIK UNTUK BOOKING ONLINE</a></li>
+							</ul>
+						</div>
+						<a href="#one" class="more scrolly">KEPOIN DIKIT YUK!</a>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style1 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Tentang Taman Nasional Bromo Tengger Semeru<br />
+								Malang Probolinggo Lumajang</h2>
+								<p>Kawasan TNBTS yang berada di 3 kabupaten memiliki keindahan yang luar biasa<br />
+								Dengan adanya dua gunung aktif, Semeru dan Bromo</p>
+							</header>
+						
+						</div>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper alt style2">
+						<section class="spotlight">
+							<div class="image"><img src="images/regulo.jpg" alt="" /></div><div class="content">
+								<a href="regulo.html"><h2>Ranu Regulo<br />
+								2100 MDPL</h2></a>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/pani.jpg" alt="" /></div><div class="content">
+								<a href="pani.html"><h2>RanuPani<br />
+								2100 MDPL</h2></a>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/kumbolo.jpg" alt="" /></div><div class="content">
+								<a href="kumbolo.html"><h2>Ranu Kumbolo<br />
+								2400 MDPL</h2></a>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+							</div>
+						</section>
+					</section>
+
+				<!-- sisi lain -->
+					<section id="three" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Sisi Lain Semeru</h2>
+								<p>Ternyata keindahan bukan terpusat di Semeru saja<br />
+								Masih banyak kejutan di TNBTS</p>
+							</header>
+							<ul class="features">
+								 <div class="text-right col-md-4">
+								<li class="icon fa-car">
+									<h3>Bukit teletubbies</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<div class="text-left col-md-4">
+								<li class="icon fa-laptop">
+									<h3>Alas Burno</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<div class="text-left col-md-4">
+								<li class="icon fa-code">
+									<h3>Lautan Pasir</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<div class="text-left col-md-4">
+								<li class="icon fa-headphones">
+									<h3>B-29</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<div class="text-left col-md-4">
+								<li class="icon fa-heart-o">
+									<h3>Puncak Bromo</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li></div>
+								<div class="text-left col-md-4">
+								<li class="icon fa-flag-o">
+									<h3>Ilalang Bromo</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- CTA -->
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								<h2>Gimana? udah ngebet ke Semeru? Apa cuma jalan-jalan di TNBTS aja?</h2>
+								<h3>Bingung ke TNBTS Gimana?. lewat Traveloka aja!! Klik link disamping</h3>
+							</header>
+							<ul class="actions stacked">
+								<li><a href="https://www.traveloka.com/" target="_blank" class="button fit primary">Traveloka Yuk!</a></li>
+								<li><a href="index.html" class="button fit">Balik ke Home</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/aremania02?ref=bookmarks" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.instagram.com/a.prat_11/?hl=id" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						
+							<li><a href="https://plus.google.com/u/0/103704071707866395463?tab=mX" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>Copyright &copy; Aji Pratama</li><li>Design dari: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+
+<?php
+
+mysql_close($koneksi);
+ob_end_flush(oid)
+?>
