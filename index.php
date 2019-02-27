@@ -13,11 +13,4 @@
 	jjjjbgggg
 	
 ?>
-nkjkjgkdgjkd 
-Something is wrong with the XAMPP installation :-(
-jhbkbhjhbjbhjb nnnb
-//blackpink
-ini abnu
-jm mnddjdhdshjdhdhdhdhddhdhdhddhdhdhd
-jjjjjjjjjj
-jjjjjjjjjjjjjjj
+nava 
