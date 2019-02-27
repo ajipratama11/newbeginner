@@ -7,10 +7,4 @@
 	$uri .= $_SERVER['HTTP_HOST'];
 	header('Location: '.$uri.'/dashboard/');
 	exit;
-	cccccccccskjksjdnksjdkskslds
-	jjbsjksbdksjbdks
-	hhhhhhhhhhhhh
-	jjjjbgggg
-	
 ?>
-nava 
