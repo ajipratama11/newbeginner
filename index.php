@@ -7,5 +7,12 @@
 	$uri .= $_SERVER['HTTP_HOST'];
 	header('Location: '.$uri.'/dashboard/');
 	exit;
-	//aprat
+	cccccccccskjksjdnksjdkskslds
+	jjbsjksbdksjbdks
+	hhhhhhhhhhhhh
+	jjjjbgggg
+	
 ?>
+Something is wrong with the XAMPP installation :-(
+jhbkbhjhbjbhjb nnnb
+//blackpink
