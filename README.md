@@ -3,7 +3,6 @@ Ide Project = Percetakan Online di Percetakaan X
               Penyewaan Online di Penyewaan X
               Membuat Aplikasi sewa kamera tanpa harus ke penyewaan X, sekaligus bisa mengecek ketersediaan kamera
               
-              
   Nama Kelompok : Aji Pratama (E41171807)
                   Much.Nesha A.R (E41171697)
                   Nava Shoqibatul Q (E41172109)
