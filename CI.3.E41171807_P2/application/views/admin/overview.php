@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Dashboard</title>
+  <title><?php echo SITE_NAME .": ". ucfirst($this->uri->segment(1)) ." - ". ucfirst($this->uri->segment(2)) ?></title>
 
   <!-- Bootstrap core CSS-->
 <link href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
@@ -26,9 +26,9 @@
 
 <body id="page-top">
 
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+  <nav class="navbar navbar-expand navbar-dark bg-success static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
+    <a class="navbar-brand mr-1" href="<?php echo site_url('admin') ?>"><?php echo SITE_NAME ?></a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -90,52 +90,59 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="sidebar navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
+   <!-- Sidebar -->
+<ul class="sidebar navbar-nav">
+    <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
+        <a class="nav-link" href="<?php echo site_url('admin') ?>">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Overview</span>
         </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+    </li>
+    <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'products' ? 'active': '' ?>">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="fas fa-fw fa-boxes"></i>
+            <span>Products</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item" href="blank.html">Blank Page</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/products/add') ?>">New Product</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/products') ?>">List Product</a>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li>
-    </ul>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Users</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Settings</span></a>
+    </li>
+</ul>
 
     <div id="content-wrapper">
 
       <div class="container-fluid">
 
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
-          </li>
-          <li class="breadcrumb-item active">Overview</li>
-        </ol>
+       <!-- Breadcrumbs-->
+<ol class="breadcrumb">
+<?php foreach ($this->uri->segments as $segment): ?>
+	<?php 
+		$url = substr($this->uri->uri_string, 0, strpos($this->uri->uri_string, $segment)) . $segment;
+		$is_active =  $url == $this->uri->uri_string;
+	?>
+
+
+	<li class="breadcrumb-item <?php echo $is_active ? 'active': '' ?>">
+		<?php if($is_active): ?>
+			<?php echo ucfirst($segment) ?>
+		<?php else: ?>
+			<a href="<?php echo site_url($url) ?>"><?php echo ucfirst($segment) ?></a>
+		<?php endif; ?>
+	</li>
+<?php endforeach; ?>
+</ol>
 
         <!-- Icon Cards-->
         <div class="row">
