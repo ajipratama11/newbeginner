@@ -15,7 +15,7 @@
               <div class="col-lg">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">COBA LOGIN</h1>
+                    <h1 class="h4 text-gray-900 mb-4">LOGIN</h1>
                   </div>
 
                   <?= $this->session->flashdata('message'); ?>
