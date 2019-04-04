@@ -6,6 +6,7 @@
 
     <div class="row">
         <div class="col-lg-6">
+            <a href="" class="btn btn-primary mb-3">Add new</a>
             <table class="table table-striped">
                 <thead>
                     <tr>
