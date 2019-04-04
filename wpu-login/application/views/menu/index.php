@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <a href="" class="btn btn-primary mb-3">Add new</a>
+            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newMenuModal">Add new</a>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -28,7 +28,7 @@
                                             </td>
                                         </tr>
                                         <?php $i++; ?>
-                                     <?php endforeach; ?>
+                                                                        <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
@@ -37,3 +37,35 @@
 
 </div>
 <!-- End of Main Content -->
+<!-- Modal -->
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="newMenuModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add New</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Example label</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Another label</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
