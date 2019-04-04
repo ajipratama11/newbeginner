@@ -7,6 +7,8 @@
     <div class="row">
         <div class="col-lg-6">
             <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newMenuModal">Add new</a>
+            <?= form_error('menu','<div class="alert alert-danger" role="alert">','</div>' ); ?>
+            <?= $this->session->flashdata('message'); ?>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -51,21 +53,20 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="<?= base_url('menu'); ?>" method="post">
                     <div class="form-group">
-                        <label for="formGroupExampleInput">Example label</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                        <label for="formGroupExampleInput">Menu name</label>
+                        <input type="text" class="form-control" id="menu" name="menu" placeholder="Menu name">
                     </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">Another label</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                    </div>
-                </form>
-            </div>
+                   
+                
+           
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
+            </div>
+            </form>
         </div>
     </div>
 </div>
