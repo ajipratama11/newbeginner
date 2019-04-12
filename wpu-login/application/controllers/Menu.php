@@ -7,9 +7,7 @@ public function __construct()
 {
     parent::__construct();
 
-    if(!$this->session->set_userdata('email')){
-        redirect('auth');
-    }
+        check_login();
 
 }
 

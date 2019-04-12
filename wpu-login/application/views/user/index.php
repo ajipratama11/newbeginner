@@ -4,6 +4,13 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
+    <div class="row">
+        <div class="col-lg-8">
+
+            <?= $this->session->flashdata('message'); ?>
+        </div>
+    </div>
+
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="<?= base_url('assets/img/profile/') . $user['image']; ?>">
         <div class="card-body">
@@ -15,4 +22,4 @@
     <!-- /.container-fluid -->
 
 </div>
-<!-- End of Main Content --> 
+<!-- End of Main Content -->
