@@ -129,6 +129,9 @@ class Auth extends CI_Controller
         if ($type == 'verify') {
             $this->email->subject('Verify Code');
             $this->email->message('Click to Verify : <a href=" ' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . ' ">Active</a>');
+        } else if ($type == 'forgot') {
+            $this->email->subject('Reset Password');
+            $this->email->message('Click to reset password : <a href=" ' . base_url() . 'auth/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) . ' ">forgot password</a>');
         }
 
         if ($this->email->send()) {
@@ -160,7 +163,7 @@ class Auth extends CI_Controller
                     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
            ' . $email . ' Activated Success, Please Login!
           </div>');
-          redirect('auth');
+                    redirect('auth');
                 } else {
 
                     $this->db->delete('user', ['email' => $email]);
@@ -205,24 +208,88 @@ class Auth extends CI_Controller
     {
 
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
-        if($this->form_validation->run() == false) {
+        if ($this->form_validation->run() == false) {
             $data['title'] = 'Forgot Password';
             $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/forgot-password');
             $this->load->view('templates/auth_footer');
-
         } else {
             $email = $this->input->post('email');
             $user = $this->db->get_where('user', ['email' => $email, 'is_active' => 1])->row_array();
 
-            if($user) {
+            if ($user) {
+                $token = base64_encode(random_bytes(32));
+                $user_token = [
+                    'email' => $email,
+                    'token' => $token,
+                    'date_created' => time()
+                ];
 
-            }else{
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-                Email not registered!
+                $this->db->insert('user_token', $user_token);
+                $this->_kirimEmail($token, 'forgot');
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                cek email!
                 </div>');
+                redirect('auth/forgotpassword');
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                Email not registered or active!
+                </div>');
+                redirect('auth/forgotpassword');
+            }
+        }
+    }
+    public function resetpassword()
+    {
+        $email = $this->input->get('email');
+        $token = $this->input->get('token');
+
+        $user = $this->db->get_where('user', ['email' => $email])->row_array();
+
+        if ($user) {
+            $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array();
+
+            if ($user_token) {
+                if (time() - $user_token['date_created'] < (60 * 60 * 24)) {
+                    $this->session->set_userdata('reset_email', $email);
+                    $this->changePassword();
+                } else {
+
+                    $this->db->delete('user', ['email' => $email]);
+                    $this->db->delete('user_token', ['email' => $email]);
+
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                        Wrong Token!
+                        </div>');
+                    redirect('auth');
+                }
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Wrong Token!
+            </div>');
                 redirect('auth');
             }
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Wrong Email!
+            </div>');
+            redirect('auth');
+        }
+    }
+
+    public function changePassword()
+    {
+        $this->form_validation->set_rules('password1', 'Password', 'trim|required|min_length[3]|matches[password2]');
+        $this->form_validation->set_rules('password2', 'Repeat Password', 'trim|required|min_length[3]|matches[password1]');
+
+        $this->form_validation->run() == false {
+            $data['title'] = 'Change Password';
+                $this->load->view('templates/auth_header', $data);
+                $this->load->view('auth/change-password');
+                $this->load->view('templates/auth_footer');
+
+        }else{
+            
         }
     }
 }
