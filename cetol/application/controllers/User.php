@@ -117,4 +117,93 @@ class User extends CI_Controller
             }
         }
     }
+    public function pesanbaneer()
+    {
+        $data['title'] = 'Banner';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/pesanbaneer', $data);
+        $this->load->view('templates/footer');
+    }
+    public function pesandokumen()
+    {
+        $data['title'] = 'Dokumen';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/pesandokumen', $data);
+        $this->load->view('templates/footer');
+    }
+    public function konfirmasibaneer()
+    {
+        $data['title'] = 'Banner';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/konfirmasibaneer', $data);
+        $this->load->view('templates/footer');
+    }
+    public function konfirmasidokumen()
+    {
+        $data['title'] = 'Dokumen';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/konfirmasidokumen', $data);
+        $this->load->view('templates/footer');
+    }
+    public function prosesbaneer()
+    {
+        $data['title'] = 'Banner';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/prosesbaneer', $data);
+        $this->load->view('templates/footer');
+    }
+    public function prosesdokumen()
+    {
+        $data['title'] = 'Dokumen';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/prosesdokumen', $data);
+        $this->load->view('templates/footer');
+    }
+    public function selesaibaneer()
+    {
+        $data['title'] = 'Banner';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/selesaibaneer', $data);
+        $this->load->view('templates/footer');
+    }
+    public function selesaidokumen()
+    {
+        $data['title'] = 'Dokumen';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/selesaidokumen', $data);
+        $this->load->view('templates/footer');
+    }
+    
 }
