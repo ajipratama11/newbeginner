@@ -47,9 +47,14 @@ class Auth extends CI_Controller
                     $this->session->set_userdata($data);
                     if ($user['role_id'] == 1) {
                         redirect('admin');
-                    } else {
-
-                        redirect('user');
+                    } else if ($user['role_id'] == 2) {
+                        redirect('user/penerimapesan');
+                    } else if ($user['role_id'] == 3) {
+                        redirect('user/desainer');
+                    } else if ($user['role_id'] == 4) {
+                        redirect('user/pencetak');
+                    } else if ($user['role_id'] == 5) {
+                        redirect('user/kasir');
                     }
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
@@ -78,6 +83,7 @@ class Auth extends CI_Controller
         }
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', ['is_unique' => 'This email used!']);
+        $this->form_validation->set_rules('role_id', 'role_id');
         $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
             'matches' => 'Password dont match!',
             'min_length' => 'Password too short!'
@@ -96,7 +102,7 @@ class Auth extends CI_Controller
                 'email' => htmlspecialchars($email),
                 'image' => 'default.jpg',
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                'role_id' => 2,
+                'role_id' => ($this->input->post('role_id', true)),
                 'is_active' => 0,
                 'date_created' => time()
             ];

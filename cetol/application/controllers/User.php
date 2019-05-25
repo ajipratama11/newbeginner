@@ -112,98 +112,54 @@ class User extends CI_Controller
                     Password Changed
                   </div>');
                     redirect('user/changepassword');
-
                 }
             }
         }
     }
-    public function pesanbaneer()
-    {
-        $data['title'] = 'Banner';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('user/pesanbaneer', $data);
-        $this->load->view('templates/footer');
-    }
-    public function pesandokumen()
-    {
-        $data['title'] = 'Dokumen';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('user/pesandokumen', $data);
-        $this->load->view('templates/footer');
-    }
-    public function konfirmasibaneer()
-    {
-        $data['title'] = 'Banner';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('user/konfirmasibaneer', $data);
-        $this->load->view('templates/footer');
-    }
-    public function konfirmasidokumen()
-    {
-        $data['title'] = 'Dokumen';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('user/konfirmasidokumen', $data);
-        $this->load->view('templates/footer');
-    }
-    public function prosesbaneer()
-    {
-        $data['title'] = 'Banner';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('user/prosesbaneer', $data);
-        $this->load->view('templates/footer');
-    }
-    public function prosesdokumen()
-    {
-        $data['title'] = 'Dokumen';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('user/prosesdokumen', $data);
-        $this->load->view('templates/footer');
-    }
-    public function selesaibaneer()
-    {
-        $data['title'] = 'Banner';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('user/selesaibaneer', $data);
-        $this->load->view('templates/footer');
-    }
-    public function selesaidokumen()
-    {
-        $data['title'] = 'Dokumen';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('user/selesaidokumen', $data);
-        $this->load->view('templates/footer');
-    }
     
+
+    public function penerimapesan()
+    {
+        $data['title'] = 'Pesanan masuk';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/penerimapesan', $data);
+        $this->load->view('templates/footer');
+    }
+    public function desainer()
+    {
+        $data['title'] = 'Pembuatan Desain';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/desainer', $data);
+        $this->load->view('templates/footer');
+    }
+    public function pencetak()
+    {
+        $data['title'] = 'Tahap cetak';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/pencetak', $data);
+        $this->load->view('templates/footer');
+    }
+    public function kasir()
+    {
+        $data['title'] = 'Pesanan selesai';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/kasir', $data);
+        $this->load->view('templates/footer');
+    }
 }
