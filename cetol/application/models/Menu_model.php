@@ -10,3 +10,4 @@ class Menu_model extends CI_model {
         return $this->db->query($query)->result_array();
     }
 }
+

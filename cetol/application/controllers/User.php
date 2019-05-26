@@ -7,6 +7,7 @@ class User extends CI_Controller
     {
         parent::__construct();
         check_login();
+        $this->load->model('Transaksi_model');
     }
     public function index()
     {
@@ -116,12 +117,13 @@ class User extends CI_Controller
             }
         }
     }
-    
+
 
     public function penerimapesan()
     {
         $data['title'] = 'Pesanan masuk';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['transaksi'] = $this->Transaksi_model->get_pesanan()->result();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -133,7 +135,7 @@ class User extends CI_Controller
     {
         $data['title'] = 'Pembuatan Desain';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
+        $data['transaksi'] = $this->Transaksi_model->get_proses_desain()->result();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -144,7 +146,7 @@ class User extends CI_Controller
     {
         $data['title'] = 'Tahap cetak';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
+        $data['transaksi'] = $this->Transaksi_model->get_proses_cetak()->result();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -155,7 +157,7 @@ class User extends CI_Controller
     {
         $data['title'] = 'Pesanan selesai';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
+        $data['transaksi'] = $this->Transaksi_model->get_kasir()->result();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);

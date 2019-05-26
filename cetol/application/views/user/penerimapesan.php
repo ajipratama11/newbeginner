@@ -26,23 +26,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="#" class="badge badge-danger">hapus</a>
-                        </td>
-                    </tr>
-
+                <?php $i = 1; ?>
+                    <?php foreach ($transaksi as $tr) : ?>
+                        <tr>
+                            <td width="80px"><?= $i; ?></td>
+                            <td><?php echo $tr->id_pesan ?></td>
+                            <td><?php echo $tr->nama_pemesan ?></td>
+                            <td><?php echo $tr->jenis_pesanan ?></td>
+                            <td><?php echo $tr->nama_file ?></td>
+                            <td><?php echo $tr->jenis_kertas ?></td>
+                            <td><?php echo $tr->panjang ?></td>
+                            <td><?php echo $tr->lebar ?></td>
+                            <td><?php echo $tr->jumlah ?></td>
+                            <td><?php echo $tr->harga ?></td>
+                            <td><?php echo $tr->tgl_pesan ?></td>
+                            <td>
+                                <a href="#" class="badge badge-danger">hapus</a>
+                            </td>
+                        </tr>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

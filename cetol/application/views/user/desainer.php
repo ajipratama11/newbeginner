@@ -8,14 +8,14 @@
         <div class="col-lg-6">
 
 
-            <table id="example" class="table table-striped table-bordered" style="width:100%">
+            
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                     <tr>
                         <th>NO</th>
                         <th>ID PESANAN</th>
                         <th>NAMA PEMESAN</th>
                         <th>JENIS PESANAN</th>
-                        <th>NAMA FILE</th>
                         <th>NAMA FILE</th>
                         <th>JENIS KERTAS</th>
                         <th>PANJANG</th>
@@ -27,24 +27,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newRoleModal">Konfirmasi</a>
-                        </td>
-                    </tr>
-
+                <?php $i = 1; ?>
+                    <?php foreach ($transaksi as $tr) : ?>
+                        <tr>
+                            <td width="80px"><?= $i; ?></td>
+                            <td><?php echo $tr->id_pesan ?></td>
+                            <td><?php echo $tr->nama_pemesan ?></td>
+                            <td><?php echo $tr->jenis_pesanan ?></td>
+                            <td><?php echo $tr->nama_file ?></td>
+                            <td><?php echo $tr->jenis_kertas ?></td>
+                            <td><?php echo $tr->panjang ?></td>
+                            <td><?php echo $tr->lebar ?></td>
+                            <td><?php echo $tr->jumlah ?></td>
+                            <td><?php echo $tr->harga ?></td>
+                            <td><?php echo $tr->tgl_pesan ?></td>
+                            <td>
+                                <a href="#" class="badge badge-danger">hapus</a>
+                            </td>
+                        </tr>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
