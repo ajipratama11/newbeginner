@@ -42,7 +42,9 @@
                             <td><?php echo $tr->harga ?></td>
                             <td><?php echo $tr->tgl_pesan ?></td>
                             <td>
-                                <a href="#" class="badge badge-danger">hapus</a>
+                            <a href="<?php echo site_url('user/confirm_desainer/'.$tr->id_pesan) ?>">
+                                                    <button class="btn btn-primary btn-sm" onclick="javasciprt: return confirm('Are You Sure ?')" 
+                                                    >Confirm</button></a>
                             </td>
                         </tr>
                         <?php $i++; ?>

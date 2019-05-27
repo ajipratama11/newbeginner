@@ -6,7 +6,8 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newRoleModal">Pesanan masuk</a>
+            <a href="<?php echo site_url('user/input_pesanan') ?>">
+                <button class="btn btn-primary btn-sm mb-3">INPUT PESANAN</button></a>
 
             <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
@@ -26,7 +27,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php $i = 1; ?>
+                    <?php $i = 1; ?>
                     <?php foreach ($transaksi as $tr) : ?>
                         <tr>
                             <td width="80px"><?= $i; ?></td>
@@ -41,7 +42,8 @@
                             <td><?php echo $tr->harga ?></td>
                             <td><?php echo $tr->tgl_pesan ?></td>
                             <td>
-                                <a href="#" class="badge badge-danger">hapus</a>
+                                <a href="<?php echo site_url('user/confirm_pesan/' . $tr->id_pesan) ?>">
+                                    <button class="btn btn-primary btn-sm" onclick="javasciprt: return confirm('Are You Sure ?')">Confirm</button></a>
                             </td>
                         </tr>
                         <?php $i++; ?>

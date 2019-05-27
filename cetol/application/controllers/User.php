@@ -164,4 +164,38 @@ class User extends CI_Controller
         $this->load->view('user/kasir', $data);
         $this->load->view('templates/footer');
     }
+
+    public function input_pesanan()
+    {
+        $data['title'] = 'Input Pesanan';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/inputpesanan', $data);
+        $this->load->view('templates/footer');
+    }
+
+
+    public function confirm_pesan($id)
+    {
+        $data["status"] = 'Proses Tahap Desain Atau Perbaikan Gambar';
+        $this->Transaksi_model->confirm($data, $id);
+        redirect('user/penerimapesan');
+    }
+
+    public function confirm_desainer($id)
+    {
+        $data["status"] = 'Proses Cetak';
+        $this->Transaksi_model->confirm($data, $id);
+        redirect('user/desainer');
+    }
+
+    public function confirm_cetak($id)
+    {
+        $data["status"] = 'Proses Selesai, Harap diambil';
+        $this->Transaksi_model->confirm($data, $id);
+        redirect('user/pencetak');
+    }
 }

@@ -130,7 +130,7 @@ class Auth extends CI_Controller
 
 
         $this->load->library('email');
-        $this->email->from('percetakanowner11@gmail.com', 'HIYAAAA');
+        $this->email->from('percetakanowner11@gmail.com', 'ADMIN TRACKING PERCETAKAN');
         $this->email->to($this->input->post('email'));
         if ($type == 'verify') {
             $this->email->subject('Verify Code');
@@ -291,13 +291,12 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password1', 'Password', 'trim|required|min_length[3]|matches[password2]');
         $this->form_validation->set_rules('password2', 'Repeat Password', 'trim|required|min_length[3]|matches[password1]');
 
-        if($this->form_validation->run() == false) {
+        if ($this->form_validation->run() == false) {
             $data['title'] = 'Change Password';
             $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/change-password');
             $this->load->view('templates/auth_footer');
-
-        }else{
+        } else {
             $password = password_hash($this->input->post('password1'), PASSWORD_DEFAULT);
             $email = $this->session->userdata('reset_email');
 
