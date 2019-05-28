@@ -171,8 +171,8 @@ class User extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar');
         $this->load->view('user/inputpesanan', $data);
         $this->load->view('templates/footer');
     }
@@ -197,5 +197,27 @@ class User extends CI_Controller
         $data["status"] = 'Proses Selesai, Harap diambil';
         $this->Transaksi_model->confirm($data, $id);
         redirect('user/pencetak');
+    }
+
+    public function tambah_pesanan(){
+        $data = [
+        'nama_pemesan' => $this->input->post('nama_pemesan'),
+        'jenis_pesanan' => $this->input->post('jenis_pesanan'),
+        'nama_file' => $this->input->post('nama_file'),
+        'jenis_kertas' => $this->input->post('jenis_kertas'),
+        'panjang' => $this->input->post('panjang'),
+        'lebar' => $this->input->post('lebar'),
+        'jumlah' => $this->input->post('jumlah'),
+        'harga' => $this->input->post('harga'),
+        'tgl_pesan' => $this->input->post('tgl_pesan'),
+        'status' => 'Pesanan belum diproses'
+    
+    ];
+        
+        $this->Transaksi_model->tambah_data($data);
+        $this->session->set_flashdata('pesantambah', '<div class="alert alert-success" role="alert">
+                Pesanan ditambahkan
+              </div>');
+        redirect('user/penerimapesan');
     }
 }

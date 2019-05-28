@@ -5,6 +5,7 @@ class Transaksi_model extends CI_model
 {
 
     public $id  = 'id_pesan';
+    public $tgl = 'tgl_pesan';
     public $jumlah = 'jumlah';
     public $tabel ='pesanan';
 
@@ -48,6 +49,11 @@ class Transaksi_model extends CI_model
         $this->db->update($this->tabel, $data);
         return $transaksi->id_pesan;
     }
+
+    function tambah_data($data){
+        $this->db->insert('pesanan', $data);
+   }
+    
 }
 
 

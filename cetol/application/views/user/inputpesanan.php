@@ -5,79 +5,77 @@
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
     <div class="row">
+    <?= $this->session->flashdata('pesantambah'); ?>
         <div class="col-lg-12">
-
-            <?= form_open_multipart('user/inputpesan'); ?>
-            <div class="form-group row">
-                <label for="email" class="col-sm-2 col-form-label">ID PESAN</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" id="email" name="email"  readonly>
-                </div>
-            </div>
+        
+        <form action="<?= base_url('user/tambah_pesanan'); ?>" method="post">
+            
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">NAMA PEMESAN</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="name" name="name" value="<?= $user['name']; ?>" >
+                    <input type="text" class="form-control" id="nama_pemesan" name="nama_pemesan">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">JENIS PESANAN</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="name" name="name" value="<?= $user['name']; ?>" >
+                    <select class="custom-select" name="jenis_pesanan" id="jenis_pesanan">
+                        <option selected value="banner">Banner</option>
+                        <option selected value="pamflet">Pamflet</option>
+                        <option selected value="brosur">Brosur</option>
+                    </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">NAMA FILE</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="name" name="name" value="<?= $user['name']; ?>" >
+                    <input type="text" class="form-control" id="nama_file" name="nama_file" >
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">JENIS KERTAS</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="name" name="name" value="<?= $user['name']; ?>" >
+                    <select class="custom-select" name="jenis_kertas" id="jenis_kertas">
+                        <option selected value="biasa">Biasa</option>
+                        <option selected value="bagus">Bagus</option>
+                        <option selected value="anti air">Anti air</option>
+                    </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">PANJANG</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="name" name="name" value="<?= $user['name']; ?>" >
+                    <input type="text" class="form-control" id="panjang" name="panjang" >
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">LEBAR</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="name" name="name" value="<?= $user['name']; ?>" >
+                    <input type="text" class="form-control" id="lebar" name="lebar" >
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">JUMLAH</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="name" name="name" value="<?= $user['name']; ?>" >
+                    <input type="text" class="form-control" id="jumlah" name="jumlah" >
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">HARGA</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="name" name="name" value="<?= $user['name']; ?>" >
+                    <input type="text" class="form-control" id="harga" name="harga" >
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">TANGGAL PESAN</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="name" name="name" value="<?= date('Y-m-d H:i:s'); ?>" readonly >
+                    <input type="text" class="form-control" id="tgl_pesan" name="tgl_pesan" value="<?= date('Y-m-d H:i:s'); ?>" readonly>
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="name" class="col-sm-2 col-form-label">STATUS</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" id="name" name="name" value="<?= $user['name']; ?>" >
-                </div>
-            </div>
-            
+
             <div class="form-group row justify-content-end">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary" >EDIT</button>
+                    <button type="submit" class="btn btn-primary">TAMBAH</button>
                 </div>
             </div>
             </form>
