@@ -23,6 +23,8 @@
                         <th>JUMLAH</th>
                         <th>HARGA</th>
                         <th>TANGGAL PESAN</th>
+                        <th>TOTAL HARGA</th>
+                        <th>Pembayaran</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -41,6 +43,8 @@
                             <td><?php echo $tr->jumlah ?></td>
                             <td><?php echo $tr->harga ?></td>
                             <td><?php echo $tr->tgl_pesan ?></td>
+                            <td><?php echo $tr->total_harga ?></td>
+                            <td><?php echo $tr->pembayaran ?></td>
                             <td>
                                 <a href="#" class="badge badge-danger">hapus</a>
                             </td>

@@ -23,6 +23,8 @@
                         <th>JUMLAH</th>
                         <th>HARGA</th>
                         <th>TANGGAL PESAN</th>
+                        <th>TOTAL HARGA</th>
+                        <th>PEMBAYARAN</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -41,9 +43,13 @@
                             <td><?php echo $tr->jumlah ?></td>
                             <td><?php echo $tr->harga ?></td>
                             <td><?php echo $tr->tgl_pesan ?></td>
+                            <td><?php echo $tr->total_harga ?></td>
+                            <td><?php echo $tr->pembayaran ?></td>
                             <td>
                                 <a href="<?php echo site_url('user/confirm_pesan/' . $tr->id_pesan) ?>">
-                                    <button class="btn btn-primary btn-sm" onclick="javasciprt: return confirm('Are You Sure ?')">Confirm</button></a>
+                                    <button class="btn btn-primary btn-sm" onclick="javasciprt: return confirm('Are You Sure ?')">Design</button></a>
+                                <a href="<?php echo site_url('user/confirm_langsung_desainer/' . $tr->id_pesan) ?>">
+                                    <button class="btn btn-danger btn-sm" onclick="javasciprt: return confirm('Are You Sure ?')">Cetak</button></a>
                             </td>
                         </tr>
                         <?php $i++; ?>

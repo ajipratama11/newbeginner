@@ -185,6 +185,13 @@ class User extends CI_Controller
         redirect('user/penerimapesan');
     }
 
+    public function confirm_langsung_desainer($id)
+    {
+        $data["status"] = 'Proses Cetak';
+        $this->Transaksi_model->confirm($data, $id);
+        redirect('user/penerimapesan');
+    }
+
     public function confirm_desainer($id)
     {
         $data["status"] = 'Proses Cetak';
@@ -210,6 +217,8 @@ class User extends CI_Controller
         'jumlah' => $this->input->post('jumlah'),
         'harga' => $this->input->post('harga'),
         'tgl_pesan' => $this->input->post('tgl_pesan'),
+        'total_harga' => $this->input->post('total_harga'),
+        'pembayaran' => $this->input->post('pembayaran'),
         'status' => 'Pesanan belum diproses'
     
     ];

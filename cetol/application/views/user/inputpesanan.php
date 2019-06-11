@@ -57,19 +57,35 @@
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">JUMLAH</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="jumlah" name="jumlah" >
+                    <input type="text" class="form-control" id="jumlah" name="jumlah"  required>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">HARGA</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="harga" name="harga" >
+                    <input type="text" class="form-control" id="harga" name="harga" onchange="return totalBayar()" required>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">TANGGAL PESAN</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" id="tgl_pesan" name="tgl_pesan" value="<?= date('Y-m-d H:i:s'); ?>" readonly>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">TOTAL HARGA</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="total_harga" name="total_harga" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">JENIS KERTAS</label>
+                <div class="col-sm-8">
+                    <select class="custom-select" name="pembayaran" id="pembayaran">
+                        <option selected value="sudah bayar">Sudah Bayar</option>
+                        <option selected value="belum bayar">Belum Bayar</option>
+                    </select>
                 </div>
             </div>
 
@@ -88,6 +104,23 @@
 <!-- End of Main Content -->
 <!-- Modal -->
 <!-- Button trigger modal -->
+<script>
+
+function totalBayar(){
+    
+    var jumlah= parseInt(document.getElementById("jumlah").value);
+    var harga= parseInt(document.getElementById("harga").value);
+
+
+    console.log(jumlah);
+    console.log(harga);
+
+    var total = document.getElementById("total_harga");
+    total.placeholder = jumlah*harga+"";
+    total.value=jumlah*harga;
+}
+
+</script>
 <script src="<?php echo base_url('assets/js/jquery-1.11.2.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/datatables/jquery.dataTables.js') ?>"></script>
 <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap.js') ?>"></script>
@@ -97,4 +130,5 @@
             "scrollX": true
         });
     });
+    
 </script>

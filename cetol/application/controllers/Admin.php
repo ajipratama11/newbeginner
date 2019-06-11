@@ -72,4 +72,17 @@ class Admin extends CI_Controller
             Access change!
           </div>');
     }
+
+    public function laporan()
+    {
+        $data['title'] = 'Laporan total';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+      
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('admin/laporan', $data);
+        $this->load->view('templates/footer');
+    }
 }

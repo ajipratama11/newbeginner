@@ -23,6 +23,7 @@
                         <th>JUMLAH</th>
                         <th>HARGA</th>
                         <th>TANGGAL PESAN</th>
+                        <th>TOTAL HARGA</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -41,6 +42,7 @@
                             <td><?php echo $tr->jumlah ?></td>
                             <td><?php echo $tr->harga ?></td>
                             <td><?php echo $tr->tgl_pesan ?></td>
+                            <td><?php echo $tr->total_harga ?></td>
                             <td>
                             <a href="<?php echo site_url('user/confirm_desainer/'.$tr->id_pesan) ?>">
                                                     <button class="btn btn-primary btn-sm" onclick="javasciprt: return confirm('Are You Sure ?')" 
