@@ -30,7 +30,7 @@ class ambilstatus extends REST_Controller
 		$response['FAIL'] = array('status' => FALSE, 'message' => 'fail get data' , 'data' => null );
 		
 		
-		$data_user=$this->m_auth->get_pesan_by_id($this->post('id_pesan'));
+		$data_user=$this->m_ambilstatus->get_pesan_by_id($this->post('id_pesan'));
 		
 		if ($data_user) {
 			$response['SUCCESS']['data']=$data_user;			
@@ -43,5 +43,3 @@ class ambilstatus extends REST_Controller
 
 
 }
-
-?>
