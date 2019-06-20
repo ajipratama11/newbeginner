@@ -41,6 +41,12 @@ class Transaksi_model extends CI_model
         $this->db->order_by($this->tgl, $this->jumlah);
         return  $this->db->get('pesanan');
     }
+    function sudah_diambil()
+    {
+        $this->db->where("status_proses", 'Telah diambil');
+        $this->db->order_by($this->tgl, $this->jumlah);
+        return  $this->db->get('pesanan');
+    }
 
     function confirm($data, $id)
     {

@@ -9,6 +9,8 @@ class Admin extends CI_Controller
 
 
         check_login();
+
+        $this->load->model('Transaksi_model');
     }
     public function index()
     {
@@ -62,9 +64,9 @@ class Admin extends CI_Controller
 
         $result = $this->db->get_where('user_access_menu', $data);
 
-        if($result->num_rows() < 1) {
+        if ($result->num_rows() < 1) {
             $this->db->insert('user_access_menu', $data);
-        }else{
+        } else {
             $this->db->delete('user_access_menu', $data);
         }
 
@@ -77,7 +79,7 @@ class Admin extends CI_Controller
     {
         $data['title'] = 'Laporan total';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-      
+        $data['transaksi'] = $this->Transaksi_model->sudah_diambil()->result();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);

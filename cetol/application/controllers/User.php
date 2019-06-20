@@ -206,6 +206,13 @@ class User extends CI_Controller
         redirect('user/pencetak');
     }
 
+    public function sudah_diambil($id)
+    {
+        $data["status_proses"] = 'Telah diambil';
+        $this->Transaksi_model->confirm($data, $id);
+        redirect('user/kasir');
+    }
+
     public function tambah_pesanan(){
         $data = [
         'nama_pemesan' => $this->input->post('nama_pemesan'),

@@ -46,7 +46,10 @@
                             <td><?php echo $tr->total_harga ?></td>
                             <td><?php echo $tr->pembayaran ?></td>
                             <td>
-                                <a href="#" class="badge badge-danger">hapus</a>
+                            <a href="<?php echo site_url('user/sudah_diambil/'.$tr->id_pesan) ?>">
+                                                    <button class="btn btn-primary btn-sm" onclick="javasciprt: return confirm('Are You Sure ?')" 
+                                                    >diambil</button></a>
+                            </td>
                             </td>
                         </tr>
                         <?php $i++; ?>
