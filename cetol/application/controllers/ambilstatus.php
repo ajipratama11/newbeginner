@@ -30,8 +30,10 @@ class ambilstatus extends REST_Controller
 		$cek = $this->m_ambilstatus->get_pesan_by_id($id_pesan);
 		if ($cek) {
 			$output['id_pesan'] = $cek['id_pesan'];
-			$output['status_proses'] = $cek['status_proses'];
+			$output['nama_pemesan'] = $cek['nama_pemesan'];
 			$output['total_harga'] = $cek['total_harga'];
+			$output['status_proses'] = $cek['status_proses'];
+
 			$this->response($output, 200);
 		} else {
 			$this->response(array('status' => 'fail', 502));
