@@ -46,10 +46,20 @@ class Contact extends CI_Controller {
 
 	private function _kirimEmail($data)
     {
+    	$config = [
+            'protocol'  => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'projekakhir82@gmail.com',
+            'smtp_pass' => 'sasqia12345',
+            'smtp_port' => 465,
+            'mailtype'  => 'html',
+            'charset'   => 'utf-8',
+            'newline'   => "\r\n"
+        ];
 
 
         $this->load->library('email');
-        $this->email->from('projekakhir82@gmail.com', 'aprat');
+        $this->email->from('projekakhir82@gmail.com', 'sasqia');
         $this->email->to($this->input->post('email'));
         $this->email->subject($this->input->post('subject'));
         $this->email->message($this->input->post('pesan'));

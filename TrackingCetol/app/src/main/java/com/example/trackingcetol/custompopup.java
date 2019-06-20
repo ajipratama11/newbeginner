@@ -14,7 +14,6 @@ public class custompopup extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         setContentView(R.layout.custompopup);
         sharedPreferences = getSharedPreferences("remember", Context.MODE_PRIVATE);
 
@@ -24,7 +23,7 @@ public class custompopup extends Activity {
 
         String total_harga= sharedPreferences.getString("total_harga","1");
         tv_pesan= findViewById(R.id.tv_pesanan);
-        tv_pesan.setText(total_harga);
+        tv_pesan.setText("Rp."+total_harga);
 
         String nama_pemesan = sharedPreferences.getString("nama_pemesan","2");
         tv_nama= findViewById(R.id.tv_nama);
