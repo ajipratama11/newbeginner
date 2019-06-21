@@ -2,14 +2,18 @@ package com.example.trackingcetol;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class custompopup extends Activity {
     SharedPreferences sharedPreferences;
     TextView tv_status, tv_nama, tv_pesan;
+    Button detail_pesanan;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,5 +40,14 @@ public class custompopup extends Activity {
         int height = dm.heightPixels;
 
         getWindow().setLayout((int) (width * .8), (int) (height * .6));
+
+        detail_pesanan = findViewById(R.id.detail_pesan);
+        detail_pesanan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(custompopup.this, DetailPesananActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

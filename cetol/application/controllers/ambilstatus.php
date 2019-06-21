@@ -33,6 +33,15 @@ class ambilstatus extends REST_Controller
 			$output['nama_pemesan'] = $cek['nama_pemesan'];
 			$output['total_harga'] = $cek['total_harga'];
 			$output['status_proses'] = $cek['status_proses'];
+			$output['jenis_pesanan'] = $cek['jenis_pesanan'];
+			$output['jenis_kertas'] = $cek['jenis_kertas'];
+			$output['panjang'] = $cek['panjang'];
+			$output['lebar'] = $cek['lebar'];
+			$output['jumlah'] = $cek['jumlah'];
+			$output['harga'] = $cek['harga'];
+			$output['tgl_pesan'] = $cek['tgl_pesan'];
+			$output['pembayaran'] = $cek['pembayaran'];
+
 
 			$this->response($output, 200);
 		} else {

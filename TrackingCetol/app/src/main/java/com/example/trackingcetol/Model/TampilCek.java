@@ -15,9 +15,88 @@ public class TampilCek {
     String status_proses;
     @SerializedName("total_harga")
     String total_harga;
+    @SerializedName("jenis_pesanan")
+    String jenis_pesanan;
+    @SerializedName("jenis_kertas")
+    String jenis_kertas;
+    @SerializedName("panjang")
+    String panjang;
+    @SerializedName("lebar")
+    String lebar;
+    @SerializedName("jumlah")
+    String jumlah;
+    @SerializedName("harga")
+    String harga;
+    @SerializedName("tgl_pesan")
+    String tgl_pesan;
+    @SerializedName("pembayaran")
+    String pembayaran;
     @SerializedName("message")
     String message;
 
+    public String getJenis_pesanan() {
+        return jenis_pesanan;
+    }
+
+    public void setJenis_pesanan(String jenis_pesanan) {
+        this.jenis_pesanan = jenis_pesanan;
+    }
+
+    public String getJenis_kertas() {
+        return jenis_kertas;
+    }
+
+    public void setJenis_kertas(String jenis_kertas) {
+        this.jenis_kertas = jenis_kertas;
+    }
+
+    public String getPanjang() {
+        return panjang;
+    }
+
+    public void setPanjang(String panjang) {
+        this.panjang = panjang;
+    }
+
+    public String getLebar() {
+        return lebar;
+    }
+
+    public void setLebar(String lebar) {
+        this.lebar = lebar;
+    }
+
+    public String getJumlah() {
+        return jumlah;
+    }
+
+    public void setJumlah(String jumlah) {
+        this.jumlah = jumlah;
+    }
+
+    public String getHarga() {
+        return harga;
+    }
+
+    public void setHarga(String harga) {
+        this.harga = harga;
+    }
+
+    public String getTgl_pesan() {
+        return tgl_pesan;
+    }
+
+    public void setTgl_pesan(String tgl_pesan) {
+        this.tgl_pesan = tgl_pesan;
+    }
+
+    public String getPembayaran() {
+        return pembayaran;
+    }
+
+    public void setPembayaran(String pembayaran) {
+        this.pembayaran = pembayaran;
+    }
 
     public String getNama_pemesan() {
         return nama_pemesan;

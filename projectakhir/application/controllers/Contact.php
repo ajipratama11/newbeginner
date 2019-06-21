@@ -49,7 +49,7 @@ class Contact extends CI_Controller {
     	$config = [
             'protocol'  => 'smtp',
             'smtp_host' => 'ssl://smtp.googlemail.com',
-            'smtp_user' => 'projekakhir82@gmail.com',
+            'smtp_user' => 'sirantang2@gmail.com',
             'smtp_pass' => 'sasqia12345',
             'smtp_port' => 465,
             'mailtype'  => 'html',
@@ -59,7 +59,7 @@ class Contact extends CI_Controller {
 
 
         $this->load->library('email');
-        $this->email->from('projekakhir82@gmail.com', 'sasqia');
+        $this->email->from('sirantang2@gmail.com', 'sasqia');
         $this->email->to($this->input->post('email'));
         $this->email->subject($this->input->post('subject'));
         $this->email->message($this->input->post('pesan'));
