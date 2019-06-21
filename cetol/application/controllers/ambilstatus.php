@@ -24,6 +24,21 @@ class ambilstatus extends REST_Controller
 		$this->response(array("result" => $a, 200));
 	}
 
+	function post_saran()
+	{
+		$data = array(
+			'nama'          => $this->post('nama'),
+			'email'    => $this->post('email'),
+			'saran'    => $this->post('saran')
+		);
+		$insert = $this->db->insert('saran', $data);
+		if ($insert) {
+			$this->response(array('status' => 'success', 200));
+		} else {
+			$this->response(array('status' => 'fail', 502));
+		}
+	}
+
 	function index_post()
 	{
 		$id_pesan = $this->input->post('id_pesan');
