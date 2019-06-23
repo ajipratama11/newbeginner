@@ -40,7 +40,7 @@ public class HomeFragment extends Fragment {
     ApiInterface mApiInterface;
     SharedPreferences sharedPreferences;
     /*Deklarasi variable*/
-    private CardView lokasi;
+    private CardView lokasi, feedback;
     String goolgeMap = "com.google.android.apps.maps"; // identitas package aplikasi google masps android
     Uri gmmIntentUri;
     Intent mapIntent;
@@ -61,6 +61,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         lokasi = view.findViewById(R.id.pesandokumen);
+        feedback = view.findViewById(R.id.pesanbanner);
         et_id = view.findViewById(R.id.et_kode);
 
 
@@ -78,6 +79,15 @@ public class HomeFragment extends Fragment {
                 mapIntent.setPackage(goolgeMap);
 
                 startActivity(mapIntent);
+            }
+        });
+
+        //feedback
+        feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),FeedbackActivity.class);
+                startActivity(intent);
             }
         });
 

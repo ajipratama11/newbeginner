@@ -1,15 +1,11 @@
 package com.example.trackingcetol;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
 import android.view.MenuItem;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
                     fragmentTransaction.commit();
                     return true;
                 case R.id.navigation_dashboard:
-                    HistoryFragment historyFragment = new HistoryFragment();
+                    ListBarangFragment listBarangFragment = new ListBarangFragment();
                     FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction1.replace(R.id.content, historyFragment);
+                    fragmentTransaction1.replace(R.id.content, listBarangFragment);
                     fragmentTransaction1.commit();
                     return true;
             }

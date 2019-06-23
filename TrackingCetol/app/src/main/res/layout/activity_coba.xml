@@ -4,12 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".DetailPesananActivity">
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
         <LinearLayout
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -18,13 +27,18 @@
 
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="140dp"
+                android:textColor="#fff"
+                android:background="@drawable/button"
                 android:layout_height="wrap_content"
-                android:text="Nama Pemesan    : " />
+                android:text="Nama Pemesan : " />
             <TextView
                 android:id="@+id/tx_nama"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:layout_height="35dp"
+                android:background="@drawable/input">
             </TextView>
         </LinearLayout>
 
@@ -41,13 +55,18 @@
 
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="140dp"
+                android:textColor="#fff"
+                android:background="@drawable/button"
                 android:layout_height="wrap_content"
                 android:text="Jenis Pesanan   : " />
             <TextView
                 android:id="@+id/tx_jenispesanan"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:layout_height="35dp"
+                android:background="@drawable/input">
             </TextView>
         </LinearLayout>
 
@@ -65,13 +84,18 @@
 
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="140dp"
+                android:textColor="#fff"
+                android:background="@drawable/button"
                 android:layout_height="wrap_content"
                 android:text="Jenis Bahan : "/>
             <TextView
                 android:id="@+id/tx_jeniskertas"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:layout_height="35dp"
+                android:background="@drawable/input">
             </TextView>
         </LinearLayout>
 
@@ -89,13 +113,18 @@
 
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="140dp"
+                android:textColor="#fff"
+                android:background="@drawable/button"
                 android:layout_height="wrap_content"
                 android:text="Panjang          : "/>
             <TextView
                 android:id="@+id/tx_panjang"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:layout_height="35dp"
+                android:background="@drawable/input" />
 
         </LinearLayout>
 
@@ -113,12 +142,17 @@
 
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="140dp"
+            android:textColor="#fff"
+            android:background="@drawable/button"
             android:layout_height="wrap_content"
             android:text="Lebar          : "/>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_height="35dp"
+            android:background="@drawable/input"
             android:id="@+id/tx_lebar"/>
 
     </LinearLayout>
@@ -137,12 +171,17 @@
 
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="140dp"
+            android:textColor="#fff"
+            android:background="@drawable/button"
             android:layout_height="wrap_content"
             android:text="Jumlah          : "/>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_height="35dp"
+            android:background="@drawable/input"
             android:id="@+id/tx_jumlah"/>
 
     </LinearLayout>
@@ -161,12 +200,17 @@
 
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="140dp"
+            android:textColor="#fff"
+            android:background="@drawable/button"
             android:layout_height="wrap_content"
             android:text="Harga          : "/>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_height="35dp"
+            android:background="@drawable/input"
             android:id="@+id/tx_harga"/>
 
     </LinearLayout>
@@ -185,12 +229,17 @@
 
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="140dp"
+            android:textColor="#fff"
+            android:background="@drawable/button"
             android:layout_height="wrap_content"
-            android:text="Tanggal Pesan          : "/>
+            android:text="Tanggal Pesan  : "/>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_height="35dp"
+            android:background="@drawable/input"
             android:id="@+id/tx_tgl"/>
 
     </LinearLayout>
@@ -209,12 +258,17 @@
 
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="140dp"
+            android:textColor="#fff"
+            android:background="@drawable/button"
             android:layout_height="wrap_content"
-            android:text="Total Harga          : "/>
+            android:text="Total Harga       : "/>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_height="35dp"
+            android:background="@drawable/input"
             android:id="@+id/tx_totalharga"/>
 
     </LinearLayout>
@@ -233,18 +287,24 @@
 
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="140dp"
+            android:textColor="#fff"
+            android:background="@drawable/button"
             android:layout_height="wrap_content"
-            android:text="Pembayaran          : "/>
+            android:text="Pembayaran       : "/>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_height="35dp"
+            android:background="@drawable/input"
             android:id="@+id/tx_pembayaran"/>
 
     </LinearLayout>
 
 
 
-
+</RelativeLayout>
+    </ScrollView>
     </RelativeLayout>
 

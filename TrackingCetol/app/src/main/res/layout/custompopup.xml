@@ -111,8 +111,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/status"
-            android:textColor="#fff"
-            android:background="@drawable/button"/>
+            android:textColor="#000"
+            android:background="@drawable/input"/>
 
     </RelativeLayout>
 

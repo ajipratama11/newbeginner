@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".FeedbackActivity">
+
+    <LinearLayout
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:id="@+id/layout_text">
+
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:layout_marginRight="35dp"
+            android:text="Nama    : " />
+        <EditText
+            android:id="@+id/et_nama"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/input">
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_text"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:id="@+id/layout_text2">
+
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:layout_marginRight="35dp"
+            android:text="Email    : " />
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/input">
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_text2"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:id="@+id/layout_text3">
+
+
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:layout_marginRight="35dp"
+            android:text="Saran    : " />
+        <EditText
+            android:id="@+id/et_saran"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@drawable/input">
+        </EditText>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_saran"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/layout_text3"
+        android:layout_width="wrap_content"
+        android:text="KIRIM"
+        android:background="@drawable/button"
+        android:layout_height="wrap_content" />
+
+
+
+</RelativeLayout>
