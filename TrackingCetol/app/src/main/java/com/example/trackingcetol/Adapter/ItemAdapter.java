@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import com.example.trackingcetol.DetailListHarga;
 import com.example.trackingcetol.Model.GetHarga;
 import com.example.trackingcetol.Model.ListHarga;
 import com.example.trackingcetol.R;
@@ -36,7 +37,18 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
 
         holder.mTextViewNama.setText(mItemList.get(position).getNama_barang());
         holder.mTextViewHarga.setText(mItemList.get(position).getJenis_barang());
-        holder.mTextViewId.setText("RP = " + mItemList.get(position).getHarga_barang());
+        holder.mTextViewId.setText("RP." + mItemList.get(position).getHarga_barang());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mIntent = new Intent(view.getContext(), DetailListHarga.class);
+                mIntent.putExtra("Nama Barang", mItemList.get(position).getNama_barang());
+                mIntent.putExtra("Jenis Barang", mItemList.get(position).getJenis_barang());
+                mIntent.putExtra("Jenis Kertas", mItemList.get(position).getJenis_kertas());
+                mIntent.putExtra("Harga Barang","Rp." + mItemList.get(position).getHarga_barang());
+                view.getContext().startActivity(mIntent);
+            }
+        });
 
     }
 
