@@ -1,8 +1,11 @@
 package com.example.trackingcetol;
 
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -30,6 +33,7 @@ public class ListBarangFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    public static ListBarangFragment ma;
     public ListBarangFragment() {
         // Required empty public constructor
     }
@@ -58,7 +62,7 @@ public class ListBarangFragment extends Fragment {
                 List<ListHarga> itemList = response.body().getListDataHarga();
                 Log.d("Retrofit Get", "Jumlah data Item: " +
                         String.valueOf(itemList.size()));
-                mAdapter = new ItemAdapter(itemList);
+                mAdapter = new ItemAdapter(itemList, getContext());
                 mRecyclerView.setAdapter(mAdapter);
             }
 

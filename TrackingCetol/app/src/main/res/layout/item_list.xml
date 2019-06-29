@@ -21,15 +21,14 @@
 
 
         <ImageView
-            android:id="@+id/item"
+            android:id="@+id/item_gambar"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_below="@+id/tvNama"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:background="@color/colorPrimary" />
+            android:layout_gravity="center" />
 
         <!--<TextView-->
         <!--android:id="@+id/tvId"-->
@@ -45,7 +44,7 @@
             android:id="@+id/tvNama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/item"
+            android:layout_below="@id/item_gambar"
             android:layout_gravity="left"
             android:hint="Nama"
 
@@ -63,12 +62,12 @@
             android:textSize="15sp"
             android:textStyle="bold" />
 
-        v
+
         <TextView
             android:id="@+id/tvId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/item"
+            android:layout_below="@id/item_gambar"
             android:layout_gravity="left"
             android:hint="Nama"
 
