@@ -61,4 +61,19 @@ class Transaksi_model extends CI_model
     {
         $this->db->insert('pesanan', $data);
     }
+    function tambah_barang($data)
+    {
+        $this->db->insert('list_barang', $data);
+    }
+
+    function get_list_barang()
+    {
+       return $this->db->get('list_barang');
+    }
+
+    function get_feedback()
+    {
+        return  $this->db->get('saran');
+    }
 }
+

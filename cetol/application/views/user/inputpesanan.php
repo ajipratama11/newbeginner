@@ -8,7 +8,7 @@
     <?= $this->session->flashdata('pesantambah'); ?>
         <div class="col-lg-12">
         
-        <form action="<?= base_url('user/tambah_pesanan'); ?>" method="post">
+        <form action="<?= base_url('penerimapesan/tambah_pesanan'); ?>" method="post">
             
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">NAMA PEMESAN</label>

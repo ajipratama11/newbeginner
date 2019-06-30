@@ -48,13 +48,13 @@ class Auth extends CI_Controller
                     if ($user['role_id'] == 1) {
                         redirect('admin/laporan');
                     } else if ($user['role_id'] == 2) {
-                        redirect('user/penerimapesan');
+                        redirect('penerimapesan');
                     } else if ($user['role_id'] == 3) {
-                        redirect('user/desainer');
+                        redirect('desainer');
                     } else if ($user['role_id'] == 4) {
-                        redirect('user/pencetak');
+                        redirect('pencetak');
                     } else if ($user['role_id'] == 5) {
-                        redirect('user/kasir');
+                        redirect('kasir');
                     }
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
@@ -91,7 +91,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = 'WPU User Registration';
+            $data['title'] = 'Registrasi Pegawai';
             $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/registration');
             $this->load->view('templates/auth_footer');
