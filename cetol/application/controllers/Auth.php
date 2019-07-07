@@ -130,7 +130,7 @@ class Auth extends CI_Controller
 
 
         $this->load->library('email');
-        $this->email->from('percetakanowner11@gmail.com', 'ADMIN TRACKING PERCETAKAN');
+        $this->email->from('percetakanowner11@gmail.com', 'ADMIN KING PERCETAKAN');
         $this->email->to($this->input->post('email'));
         if ($type == 'verify') {
             $this->email->subject('Verify Code');

@@ -44,7 +44,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
         holder.mTextViewNama.setText(mItemList.get(position).getNama_barang());
         holder.mTextViewHarga.setText(mItemList.get(position).getJenis_barang());
         holder.mTextViewId.setText("RP." + mItemList.get(position).getHarga_barang());
-        final String urlGambarBerita = "http://192.168.1.6/cetol/assets/img/barang/" + mItemList.get(position).getGambar();
+        final String urlGambarBerita = "http://192.168.43.75/cetol/assets/img/barang/" + mItemList.get(position).getGambar();
         Picasso.with(context).load(urlGambarBerita).into(holder.imageView);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -6,7 +6,7 @@ class penerimapesan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-       check_login();
+        check_login();
         $this->load->model('Transaksi_model');
     }
     public function index()
@@ -214,23 +214,24 @@ class penerimapesan extends CI_Controller
     //     redirect('user/kasir');
     // }
 
-    public function tambah_pesanan(){
+    public function tambah_pesanan()
+    {
         $data = [
-        'nama_pemesan' => $this->input->post('nama_pemesan'),
-        'jenis_pesanan' => $this->input->post('jenis_pesanan'),
-        'nama_file' => $this->input->post('nama_file'),
-        'jenis_kertas' => $this->input->post('jenis_kertas'),
-        'panjang' => $this->input->post('panjang'),
-        'lebar' => $this->input->post('lebar'),
-        'jumlah' => $this->input->post('jumlah'),
-        'harga' => $this->input->post('harga'),
-        'tgl_pesan' => $this->input->post('tgl_pesan'),
-        'total_harga' => $this->input->post('total_harga'),
-        'pembayaran' => $this->input->post('pembayaran'),
-        'status_proses' => 'Pesanan belum diproses'
-    
-    ];
-        
+            'nama_pemesan' => $this->input->post('nama_pemesan'),
+            'jenis_pesanan' => $this->input->post('jenis_pesanan'),
+            'nama_file' => $this->input->post('nama_file'),
+            'jenis_kertas' => $this->input->post('jenis_kertas'),
+            'panjang' => $this->input->post('panjang'),
+            'lebar' => $this->input->post('lebar'),
+            'jumlah' => $this->input->post('jumlah'),
+            'harga' => $this->input->post('harga'),
+            'tgl_pesan' => $this->input->post('tgl_pesan'),
+            'total_harga' => $this->input->post('total_harga'),
+            'pembayaran' => $this->input->post('pembayaran'),
+            'status_proses' => 'Pesanan belum diproses'
+
+        ];
+
         $this->Transaksi_model->tambah_data($data);
         $this->session->set_flashdata('pesantambah', '<div class="alert alert-success" role="alert">
                 Pesanan ditambahkan

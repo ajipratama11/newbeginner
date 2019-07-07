@@ -12,17 +12,8 @@
                 <i class="fa fa-bars"></i>
             </button>
 
-
-
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
-
-
-
-
-
-
-
                 <div class="topbar-divider d-none d-sm-block"></div>
 
                 <!-- Nav Item - User Information -->
@@ -49,4 +40,4 @@
             </ul>
 
         </nav>
-        <!-- End of Topbar --> 
+        <!-- End of Topbar -->

@@ -38,7 +38,7 @@ public class DetailListHarga extends AppCompatActivity implements View.OnClickLi
         jenis_pesanan.setText(mIntent.getStringExtra("Jenis Barang"));
         jenis_kertas.setText(mIntent.getStringExtra("Jenis Kertas"));
         harga.setText(mIntent.getStringExtra("Harga Barang"));
-        Picasso.with(DetailListHarga.this).load(mIntent.getStringExtra ("Gambar")).into(gambar);
+        Picasso.with(DetailListHarga.this).load("http://192.168.43.75/cetol/assets/img/barang/"+mIntent.getStringExtra ("Gambar")).into(gambar);
 
 
 

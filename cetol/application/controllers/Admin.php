@@ -130,40 +130,20 @@ class Admin extends CI_Controller
 
     public function tambah_barang()
     {
-        
-            $nama_barang = $this->input->post('nama_barang');
-            $jenis_barang = $this->input->post('jenis_barang');
-            $jenis_kertas = $this->input->post('jenis_kertas');
-            $gambar = $_FILES['gambar'];
-            $harga_barang = $this->input->post('harga_barang');
-            if($gambar=''){}
-                else{
-                    $config['upload_path'] = './assets/img/barang/';
-                    $config['allowed_types']        = 'gif|jpg|png|JPG';
+        $data = [
+            'nama_barang' => $this->input->post('nama_barang'),
+            'jenis_barang' => $this->input->post('jenis_barang'),
+            'jenis_kertas' => $this->input->post('jenis_kertas'),
+            'gambar' => $this->_uploadImage(),
+            'harga_barang' => $this->input->post('harga_barang')
+        ];
 
-                    $this->load->library('upload', $config);
 
-                    if ( ! $this->upload->do_upload('gambar')) {
-                        echo "ukuran besar"; die();
-                    }else{
-                        $gambar=$this->upload->data('file_name');
-                    }
-                }
-
-            $data = array(
-             'nama_barang' => $nama_barang,
-             'jenis_barang' => $jenis_barang,
-             'jenis_kertas' => $jenis_kertas,
-             'gambar' =>$gambar,
-             'harga_barang' =>$harga_barang
-        );
-                
         $this->Transaksi_model->tambah_barang($data);
         $this->session->set_flashdata('pesantambah', '<div class="alert alert-success" role="alert">
                 Pesanan ditambahkan
               </div>');
         redirect('admin/list_barang');
-        
     }
 
     private function _uploadImage()
@@ -172,7 +152,7 @@ class Admin extends CI_Controller
         $config['allowed_types']        = 'gif|jpg|png|JPG';
         $config['max_size']             = 9048;
         $config['overwrite']            = true;
-        $config['file_name']            = round(microtime(true) * 1000);
+        $config['file_name']            = $_FILES['gambar']['name'];
 
         // 1MB
         // $config['max_width']            = 1024;

@@ -19,9 +19,7 @@ import com.example.trackingcetol.Model.GetHarga;
 import com.example.trackingcetol.Model.ListHarga;
 import com.example.trackingcetol.Rest.ApiClient;
 import com.example.trackingcetol.Rest.ApiInterface;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -33,7 +31,7 @@ public class ListBarangFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    public static ListBarangFragment ma;
+
     public ListBarangFragment() {
         // Required empty public constructor
     }

@@ -13,6 +13,17 @@ class Transaksi_model extends CI_model
     {
         parent::__construct();
     }
+    public function rules()
+    {
+        return [
+            [
+                'field' => 'nama_pemesan',
+                'label' => 'nama_pemesan',
+                'rules' => 'required'
+            ],
+
+        ];
+    }
     function get_pesanan()
     {
         $this->db->where("status_proses", 'Pesanan belum diproses');
@@ -68,7 +79,7 @@ class Transaksi_model extends CI_model
 
     function get_list_barang()
     {
-       return $this->db->get('list_barang');
+        return $this->db->get('list_barang');
     }
 
     function get_feedback()
@@ -76,4 +87,3 @@ class Transaksi_model extends CI_model
         return  $this->db->get('saran');
     }
 }
-
