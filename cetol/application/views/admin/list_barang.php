@@ -27,17 +27,18 @@
                         <?php foreach ($transaksi as $tr) : ?>
                             <tr>
                                 <td width="80px"><?= $i; ?></td>
+                                <?php $tr->id_barang ?>
                                 <td><?php echo $tr->nama_barang ?></td>
                                 <td><?php echo $tr->jenis_barang ?></td>
                                 <td><?php echo $tr->jenis_kertas ?></td>
                                 <td><img src="<?= base_url('assets/img/barang/' . $tr->gambar) ?>" width="64" class="img-thumbnail"></td>
                                 <td><?php echo $tr->harga_barang ?></td>
                                 <td>
-                                    <a href="<?php echo site_url() ?>">
+                                    <a href="">
                                         <button class="btn btn-primary btn-sm" onclick="javasciprt: return confirm('Are You Sure ?')">Edit</button></a>
                                     <br><br>
 
-                                    <a href="<?php echo site_url() ?>">
+                                    <a href="<?php echo site_url('admin/delete/' . $tr->id_barang) ?>">
                                         <button class="btn btn-danger btn-sm" onclick="javasciprt: return confirm('Are You Sure ?')">Hapus</button></a>
                                 </td>
                             </tr>

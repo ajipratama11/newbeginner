@@ -86,4 +86,10 @@ class Transaksi_model extends CI_model
     {
         return  $this->db->get('saran');
     }
+
+    function delete($id_barang)
+    {
+        $this->db->where('id_barang', $id_barang);
+        $this->db->delete('list_barang');
+    }
 }

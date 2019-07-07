@@ -166,4 +166,58 @@ class Admin extends CI_Controller
 
         return "default.jpg";
     }
+
+    public function update($id)
+    {
+        $row = $this->M_mobil_admin->get_by_id($id);
+
+        if ($row) {
+            $data = array(
+                'id_barang' => set_value('ID_MOBIL', $row->ID_MOBIL),
+                'nama_barang' => set_value('NAMA_MOBIL', $row->NAMA_MOBIL),
+                'jenis_kertas' => set_value('MERK_MOBIL', $row->MERK_MOBIL),
+                'harga_barang' => set_value('DESKRIPSI_MOBIL', $row->DESKRIPSI_MOBIL),
+                'TAHUN_MOBIL' => set_value('TAHUN_MOBIL', $row->TAHUN_MOBIL),
+                'KAPASITAS_MOBIL' => set_value('KAPASITAS_MOBIL', $row->KAPASITAS_MOBIL),
+                'HARGA_MOBIL' => set_value('HARGA_MOBIL', $row->HARGA_MOBIL),
+                'WARNA_MOBIL' => set_value('WARNA_MOBIL', $row->WARNA_MOBIL),
+                'BENSIN_MOBIL' => set_value('BENSIN_MOBIL', $row->BENSIN_MOBIL),
+                'PLAT_NO_MOBIL' => set_value('PLAT_NO_MOBIL', $row->PLAT_NO_MOBIL),
+                'STATUS_SEWA' => set_value('STATUS_SEWA', $row->STATUS_SEWA),
+                'STATUS_MOBIL' => set_value('STATUS_MOBIL', $row->STATUS_MOBIL),
+                'CREATED_MOBIL' => set_value('CREATED_MOBIL', $row->CREATED_MOBIL),
+            );
+
+            $data['fasilitas'] = $this->M_fasilitas_admin->get_all();
+            $fasilitas_mobil = $this->M_fasilitas_mobil_admin->get_by_id($id);
+            foreach ($data['fasilitas'] as $var) {
+                $data['fasilitas_mobil'][$var->ID_FASILITAS] = "";
+            }
+
+            foreach ($fasilitas_mobil as $var) {
+                $data['fasilitas_mobil'][$var->ID_FASILITAS] = "checked";
+            }
+
+
+            $this->load->view('template/header');
+            $this->load->view('mobil/tb_mobil_form', $data);
+            $this->load->view('template/footer');
+        } else {
+            $this->session->set_flashdata('message', 'Record Not Found');
+            redirect(site_url('mobil'));
+        }
+    }
+
+    public function delete($id_barang)
+    {
+
+        if ($id_barang) {
+            $this->Transaksi_model->delete($id_barang);
+            $this->session->set_flashdata('message', 'Delete Record Success');
+            redirect('admin/list_barang');
+        } else {
+            $this->session->set_flashdata('message', 'Record Not Found');
+            redirect('admin/list_barang');
+        }
+    }
 }

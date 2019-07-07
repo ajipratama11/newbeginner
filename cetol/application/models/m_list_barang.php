@@ -1,14 +1,14 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class Product_model extends CI_Model
+class m_list_barang extends CI_Model
 {
     private $_table = "list_barang";
 
     public $nama_barang;
-    public $name;
-    public $price;
-    public $image = "default.jpg";
-    public $description;
+    public $jenis_barang;
+    public $jenis_kertas;
+    public $gambar = "default.jpg";
+    public $harga_barang;
 
     public function rules()
     {
@@ -57,17 +57,17 @@ class Product_model extends CI_Model
     public function update()
     {
         $post = $this->input->post();
-        $this->product_id = $post["id"];
-        $this->name = $post["name"];
-        $this->price = $post["price"];
-
-        if (!empty($_FILES["image"]["name"])) {
+        $this->nama_barang = $post["id"];
+        $this->jenis_barang = $post["jenis_barang"];
+        $this->jenis_kertas = $post["jenis_kertas"];
+       
+        if (!empty($_FILES["gambar"]["name"])) {
             $this->image = $this->_uploadImage();
         } else {
             $this->image = $post["old_image"];
         }
-        $this->description = $post["description"];
-        $this->db->update($this->_table, $this, array('product_id' => $post['id']));
+        $this->harga_barang = $post["harga_barang"];
+        $this->db->update($this->_table, $this, array('id_barang' => $post['id_barang']));
     }
 
     public function delete($id)
